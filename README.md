@@ -1,11 +1,5 @@
 # M3 - 🗿 Moai
 
-<br>
-
-# Quick Compo
-
-<br>
-
 ## Description
 
 Student platform, where you can find all the programming and design documentation created and shared by students.
