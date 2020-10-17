@@ -23,13 +23,10 @@ Student platform, where you can find all the programming and design documentatio
 -  **Delete course** Delete a course
 
 
-
-
-
 ## Backlog
 
 User profile:
-- see my profile
+- See my profile
 - Rating course
 - Comments course
 - Share course
@@ -72,7 +69,7 @@ User profile:
   - auth.signup(user)
   - auth.logout()
 
-- Resources Service
+- Course Service
   - course.list()
   - course.detail(id)
   - course.add(id)
