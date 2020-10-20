@@ -1,20 +1,17 @@
 {
   "name": "fullstackjs-rest-api",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./app.js",
-    "seed": "cross-env DB_ENABLE_LOGGING=true node './seed'"
+    "dev": "nodemon ./bin/www"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.1"
   },
   "dependencies": {
     "basic-auth": "^2.0.1",
+    "cookie-parser": "~1.4.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
