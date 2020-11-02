@@ -8,7 +8,6 @@ class Context {
     this.enableLogging = enableLogging;
     this.db = {};
   }
-
   log(message) {
     if (this.enableLogging) {
       console.info(message);
@@ -27,7 +26,6 @@ class Context {
         const value = document[key];
 
         if (value.$oid) {
-          /* eslint-disable no-param-reassign */
           document[key] = ObjectID.createFromHexString(value.$oid);
         }
       });
