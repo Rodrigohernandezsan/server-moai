@@ -8,21 +8,6 @@ const cors = require('cors');
 
 //setup mongoose and connect to database
 
-// const mongoose = require('mongoose');
-
-// mongoose.connect('mongodb://localhost/fsjstd-restapi');
-
-// const db = mongoose.connection;
-
-// db.on('error', (err) => {
-//     console.error('Connection error:', err);
-// });
-
-// db.once('open', () => {
-//     console.log('Databse connection successful!');
-// });
-
-
 const mongoose = require("mongoose");
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/fsjstd-restapi";
 mongoose
