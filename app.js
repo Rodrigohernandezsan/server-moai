@@ -7,9 +7,12 @@ const jsonParser = require('body-parser').json;
 const cors = require('cors');
 
 //setup mongoose and connect to database
+
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/fsjstd-restapi');
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/fsjstd-restapi';
+
+ mongoose.connect('mongodb://localhost/fsjstd-restapi');
 
 const db = mongoose.connection;
 
@@ -20,6 +23,14 @@ db.on('error', (err) => {
 db.once('open', () => {
     console.log('Databse connection successful!');
 });
+
+mongoose
+  .connect(`${process.env.MONGODB_URI}`, { 
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+  });
+
+  
 
 // variable to enable global error logging
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
