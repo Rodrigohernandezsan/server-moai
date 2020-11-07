@@ -1,7 +1,7 @@
 'use strict';
 
 const bcryptjs = require('bcryptjs');
-const Context = require('../config/db.config');
+//const Context = require('../config/db.config');
 
 class Database {
   constructor(seedData, enableLogging = false) {
