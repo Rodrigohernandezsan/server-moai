@@ -5,11 +5,13 @@ const express = require('express');
 const morgan = require('morgan');
 const jsonParser = require('body-parser').json;
 const cors = require('cors');
+require('dotenv').config();
 
 //setup mongoose and connect to database
 
 const mongoose = require("mongoose");
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/fsjstd-restapi";
+
 mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
@@ -89,3 +91,4 @@ app.set('port', process.env.PORT || 5000);
 const server = app.listen(app.get('port'), () => {
   console.log(`Express server is listening on port ${server.address().port}`);
 });
+
