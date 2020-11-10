@@ -9,26 +9,26 @@ const cors = require('cors');
 
 //setup mongoose and connect to database
 
-// const mongoose = require("mongoose");
-// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/fsjstd-restapi";
+ const mongoose = require("mongoose");
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/fsjstd-restapi";
 
-// mongoose
-//   .connect(MONGODB_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//   })
-//   .then(() =>
-//     console.log(`Successfully connected to the database ${MONGODB_URI}`)
-//   )
-//   .catch((error) => {
-//     console.error(
-//       `An error ocurred trying to connect to the database ${MONGODB_URI}: `,
-//       error
-//     );
-//     process.exit(1);
-//   });
-
+mongoose
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() =>
+    console.log(`Successfully connected to the database ${MONGODB_URI}`)
+  )
+  .catch((error) => {
+    console.error(
+      `An error ocurred trying to connect to the database ${MONGODB_URI}: `,
+      error
+    );
+    process.exit(1);
+  });
+/*
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/fsjstd-restapi');
@@ -43,7 +43,7 @@ db.once('open', () => {
     console.log('Databse connection successful!');
 });
 
-
+*/
 
 // variable to enable global error logging
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
