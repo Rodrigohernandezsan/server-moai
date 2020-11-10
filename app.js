@@ -45,15 +45,14 @@ db.once('open', () => {
 
 
 
-// variable to enable global error logging
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
 
-// create the Express app
+
 const app = express();
 
 //set up CORS for all requests
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: process.env.API_URI,
   optionsSuccessStatus: 200
 }
 
