@@ -5,11 +5,11 @@ const express = require('express');
 const morgan = require('morgan');
 const jsonParser = require('body-parser').json;
 const cors = require('cors');
-require('dotenv').config();
+// require('dotenv').config();
 
 //setup mongoose and connect to database
 
- const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/fsjstd-restapi";
 
 mongoose
@@ -28,22 +28,8 @@ mongoose
     );
     process.exit(1);
   });
-/*
-const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/fsjstd-restapi');
 
-const db = mongoose.connection;
-
-db.on('error', (err) => {
-    console.error('Connection error:', err);
-});
-
-db.once('open', () => {
-    console.log('Databse connection successful!');
-});
-
-*/
 
 // variable to enable global error logging
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
@@ -52,18 +38,10 @@ const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'tr
 const app = express();
 
 //set up CORS for all requests
-// const corsOptions = {
-//   origin: 'http://localhost:3000',
-//   optionsSuccessStatus: 200
-// }
-
-
-
- const corsOptions = {
-   origin: process.env.API_URI || "http://localhost:3000",
+const corsOptions = {
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200
 }
-
 
 app.use(cors(corsOptions));
 
@@ -113,4 +91,3 @@ app.set('port', process.env.PORT || 5000);
 const server = app.listen(app.get('port'), () => {
   console.log(`Express server is listening on port ${server.address().port}`);
 });
-
