@@ -28,7 +28,7 @@ router.post('/users', (req, res, next) => {
             return next(err);
         }
 
-        res.location('/');
+     //   res.location('/');
         res.status(201).send();
     });
 });
@@ -69,7 +69,7 @@ router.post('/courses', checkForAuthentication, function (req, res, next) {
             if (err.name === 'ValidationError') return res.status(400).send(err.message);
             return next(err);
         }
-        res.location(`localhost:5000/api/courses/${course._id}`);
+        res.location(`${process.env.RELOCATION_URL}/api/courses/${course._id}`);
         res.status(201).send();
     });
 });

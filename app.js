@@ -5,7 +5,7 @@ const express = require('express');
 const morgan = require('morgan');
 const jsonParser = require('body-parser').json;
 const cors = require('cors');
-// require('dotenv').config();
+require('dotenv').config();
 
 //setup mongoose and connect to database
 
